@@ -14,7 +14,7 @@ pipeline {
 
 	    stage ('Clone Repository'){
 		    steps{
-			    git url: 'https://github.com/Ahsshalaby/jenkins-pipeline.git', branch: 'main'
+			    git url: 'https://github.com/Ahsshalaby/VueJsSpringbootPipeline.git', branch: 'main'
 		    }
 	    }
 
