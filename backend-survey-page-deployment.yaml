@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-survey-page-deployment
+  labels:
+    app: survey-page
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: survey-page
+  template:
+    metadata:
+      labels:
+        app: survey-page
+    spec:
+      containers:
+      - name: survey-page
+        image: ulisesalmonte/survey-page:v1
+        ports:
+        - containerPort: 8080
+

@@ -43,8 +43,9 @@ public class SurveyController {
     }
 
     @PostMapping(value = "/submitSurveyRecord", consumes = { "application/json" })
-    public Long submitSurveyRecord(@RequestBody SurveyRecord record) {
-	return surveyRepository.save(record).getId();
+    public ResponseEntity<Long> submitSurveyRecord(@RequestBody SurveyRecord record) {
+	Long createdSurveyRecordId = surveyRepository.save(record).getId();
+	return new ResponseEntity<Long>(createdSurveyRecordId, HttpStatus.OK);
     }
 
     @DeleteMapping("/removeSurveyRecord/{id}")
@@ -83,6 +84,8 @@ public class SurveyController {
 	survey.setTelephone(updateSurveyRecord.getTelephone());
 	survey.setEmail(updateSurveyRecord.getEmail());
 	survey.setDateOfSurvey(updateSurveyRecord.getDateOfSurvey());
-
+	survey.setInterest(updateSurveyRecord.getInterest());
+	survey.setLikes(updateSurveyRecord.getLikes());
+	survey.setRecommending(updateSurveyRecord.getRecommending());
     }
 }

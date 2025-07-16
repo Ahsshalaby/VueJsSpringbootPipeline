@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>summer2025.projects</groupId>
-	<artifactId>ualmonte-survey-page</artifactId>
+	<artifactId>survey-page</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ualmonte-survey-page</name>
+	<name>survey-page</name>
 	<description>Survey page</description>
 	<url/>
 	<licenses>
