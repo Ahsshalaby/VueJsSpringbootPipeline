@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import summer2025.projects.ualmonte_survey_page.entity.SurveyRecord;
 import summer2025.projects.ualmonte_survey_page.repository.SurveyRepository;
 
+@CrossOrigin(origins = "*") 
 @RestController
 @RequestMapping("/surveyapi")
 public class SurveyController {
