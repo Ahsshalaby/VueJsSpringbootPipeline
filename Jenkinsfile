@@ -38,7 +38,7 @@ pipeline {
         steps {
 
         script{
-                       docker.build(DOCKER_IMAGE, './frontend')
+                       docker.build(DOCKER_IMAGE, './FrontEnd')
                 }
                }
         }
