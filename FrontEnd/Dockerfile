@@ -6,6 +6,12 @@ COPY  package*.json ./
 RUN npm install
 
 COPY . .
+
+
+RUN chmod +x node_modules/.bin/vue-cli-service
+
+RUN npx vue-cli-service build
+
 RUN  npm run build 
 
 # production stage 
