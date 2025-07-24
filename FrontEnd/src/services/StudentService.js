@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:8080/surveyapi";
+const BASE_URL = "http://ec2-52-201-198-62.compute-1.amazonaws.com:30010/surveyapi";
 
 class StudentService {
   getStudents() {

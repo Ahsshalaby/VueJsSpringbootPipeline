@@ -1,6 +1,6 @@
 <template>
   <div>
-  <img alt="Vue logo" src="./assets/GMUBuilding.jpg">
+  <img alt="Vue logo" src="./assets/GMUBuilding.jpg" height:="800px" width="700px">
   <Student />
   </div>
 </template>
@@ -29,5 +29,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-image:url('@/assets/181106003-scaled-1.jpg'); ;
 }
 </style>
