@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import summer2025.projects.ualmonte_survey_page.entity.SurveyRecord;
 import summer2025.projects.ualmonte_survey_page.repository.SurveyRepository;
 
-@CrossOrigin(origins = "*") 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/surveyapi")
 public class SurveyController {
