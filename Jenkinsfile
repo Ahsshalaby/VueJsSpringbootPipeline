@@ -29,12 +29,13 @@ pipeline {
         */
 
         stage('Build Backend') {
-          steps {
-              dir('ualmonte-survey-page') {
-                sh './mvnw clean package -DskipTests'
-            }
-          }
+    steps {
+        dir('ualmonte-survey-page') {
+            sh 'chmod +x mvnw'
+            sh './mvnw clean package -DskipTests'
         }
+    }
+}
         stage('Build Docker image') {
             steps {
                 script {
