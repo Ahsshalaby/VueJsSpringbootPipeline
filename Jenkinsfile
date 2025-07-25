@@ -28,6 +28,11 @@ pipeline {
         }
         */
 
+        stage('Build Backend') {
+          steps {
+              sh './mvnw clean package -DskipTests'
+          }
+        }
         stage('Build Docker image') {
             steps {
                 script {
