@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://54.208.88.112:30010/surveyapi/";
+const BASE_URL = "http://54.208.88.112:30010/surveyapi";
 
 class StudentService {
   getStudents() {
