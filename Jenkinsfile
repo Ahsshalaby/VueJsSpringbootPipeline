@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "ahsshalaby/hw2app"
-        DOCKER_IMAGE_BACKEND = "ulisesalmonte/survey-page:v2"
+        DOCKER_IMAGE_BACKEND = "ulisesalmonte/survey-page"
         K8S_NAMESPACE = "default"
         KUBECONFIG_CRED_ID = 'homework3'
         DOCKER_CREDENTIALS_ID = 'dockerhub'
