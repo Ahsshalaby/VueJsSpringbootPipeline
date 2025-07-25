@@ -3,9 +3,11 @@ pipeline {
 
     environment {
 	DOCKER_IMAGE = "ahsshalaby/hw2app"
+	DOCKER_IMAGE_BACKEND = "c/survey-page:v2"
 	K8S_NAMESPACE = "default"
         KUBECONFIG_CRED_ID = 'homework3'
 	DOCKER_CREDENTIALS_ID = 'dockerhub'
+	DOCKER_CREDENTIALS_BACKEND = 'docker_backend'
     }
 
     stages {
@@ -39,6 +41,7 @@ pipeline {
 
         script{
                        docker.build(DOCKER_IMAGE, './FrontEnd')
+			docker.build(DOCKER_IMAGE_BACKEND, './ualmonte-survey-page')
                 }
                }
         }
@@ -49,6 +52,9 @@ pipeline {
         script{
                        docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
                         docker.image("${DOCKER_IMAGE}").push('latest')
+
+			docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_BACKEND) {
+                        docker.image("${DOCKER_IMAGE_BACKEND}").push('latest')
                 }
                }
         }
@@ -63,6 +69,10 @@ pipeline {
                         kubectl set image deployment/hw2acs-deployment container-0=${DOCKER_IMAGE}:latest -n ${K8S_NAMESPACE}
 			kubectl rollout restart deployment hw2acs-deployment -n ${K8S_NAMESPACE}
                         kubectl rollout status deployment/hw2acs-deployment -n ${K8S_NAMESPACE}
+
+    			kubectl set image deployment/backendhw3 backendhw3=${DOCKER_IMAGE_BACKEND}:latest -n ${K8S_NAMESPACE}
+			kubectl rollout restart deployment backendhw3 -n ${K8S_NAMESPACE}
+                        kubectl rollout status deployment/backendhw3 -n ${K8S_NAMESPACE}
                         '''
                 }
             }
