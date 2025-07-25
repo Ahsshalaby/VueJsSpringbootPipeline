@@ -31,8 +31,8 @@ pipeline {
         stage('Build Backend') {
           steps {
               dir('ualmonte-survey-page') {
-                sh 'mvn clean package -DskipTests'
-                }
+                sh './mvnw clean package -DskipTests'
+            }
           }
         }
         stage('Build Docker image') {
