@@ -4,7 +4,7 @@ pipeline {
     environment {
 	DOCKER_IMAGE = "ahsshalaby/hw2app"
 	K8S_NAMESPACE = "default"
-        KUBECONFIG_CRED_ID = 'kubeconfigcredentials.txt'
+        KUBECONFIG_CRED_ID = 'homework3'
 	DOCKER_CREDENTIALS_ID = 'dockerhub'
     }
 
