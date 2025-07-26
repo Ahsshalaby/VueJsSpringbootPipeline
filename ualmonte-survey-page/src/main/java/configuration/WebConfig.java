@@ -14,7 +14,7 @@ public class WebConfig {
 	    @Override
 	    public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**") // Allow all paths
-			.allowedOrigins("http://ec2-52-201-198-62.compute-1.amazonaws.com:30040")
+			.allowedOrigins("http://54.208.88.112:30424")
 			.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS").allowedHeaders("*")
 			.allowCredentials(true);
 	    }
